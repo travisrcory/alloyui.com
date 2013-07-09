@@ -16,7 +16,7 @@ order: 1
 
 <h4>2. Getting started!</h4>
 
-<p>Let's create an YUI instance and do some simple stuff, like capturing a DOM element and attaching a click event to it. Then let's run some transitions!</p>
+<p>Let's create an AUI instance and do some simple stuff, like capturing a DOM element and attaching a click event to it. Then let's run some transitions!</p>
 
 <pre><code>AUI().use(
 'node',
@@ -35,7 +35,7 @@ function (A) {
 );</code></pre>
 
 <div style="text-align: center;">
-  <button id="try-btn" class="btn btn-large btn-block btn-primary" type="button">Try me now!</button>
+	<button id="try-btn" class="btn btn-large btn-block btn-primary" type="button">Try me now!</button>
 </div>
 
 <hr>
@@ -56,20 +56,20 @@ function (A) {
 );</code></pre>
 
 <div id="myCarousel">
-  <div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/1.jpg);"></div>
-  <div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/2.jpg);"></div>
-  <div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/3.jpg);"></div>
-  <div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/4.jpg);"></div>
+	<div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/1.jpg);"></div>
+	<div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/2.jpg);"></div>
+	<div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/3.jpg);"></div>
+	<div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/4.jpg);"></div>
 </div>
 
 <div class="row">
-  <div class="span9 title">
-    <p class="call">and this is just the beginning!</p>
-  </div>
+	<div class="span9 title">
+		<p class="call">and this is just the beginning!</p>
+	</div>
 </div>
 
 <div class="row">
-  <p style="text-align: center; margin-bottom: 25px;">Go ahead and navigate between other components using the list on the left.</p>
+	<p style="text-align: center; margin-bottom: 25px;">Go ahead and navigate between other components using the list on the left.</p>
 </div>
 
 <link rel="stylesheet" href="<%= @getSiteUrl() %>/carousel/css/basic.css" />
