@@ -2,7 +2,8 @@
 layout: single-doc
 title: Form Builder
 tags: 'form-builder'
-category: Form Builder
+type: module
+category: Tutorial
 description: Provides a graphic user interface method for contructing forms.
 ---
 

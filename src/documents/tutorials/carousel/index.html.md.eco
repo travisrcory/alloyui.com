@@ -2,7 +2,8 @@
 layout: single-doc
 title: Carousel
 tags: 'carousel'
-category: Carousel
+type: module
+category: Tutorial
 description: Provides an interactive way of cycling through elements.
 ---
 

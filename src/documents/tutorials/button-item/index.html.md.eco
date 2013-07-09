@@ -2,7 +2,8 @@
 layout: single-doc
 title: Button Item
 tags: 'button-item'
-category: Button Item
+type: module
+category: Tutorial
 description: Enables the creation of buttons with icons and event handling.
 ---
 

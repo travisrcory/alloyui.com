@@ -2,7 +2,8 @@
 layout: single-doc
 title: DatePicker
 tags: 'datepicker'
-category: DatePicker
+type: module
+category: Tutorial
 description: Create a dynamic datepicker that allows users to select the date with a calendar.
 ---
 

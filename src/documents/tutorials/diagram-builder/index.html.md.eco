@@ -2,7 +2,8 @@
 layout: single-doc
 title: Diagram Builder
 tags: 'diagram-builder'
-category: Diagram Builder
+type: module
+category: Tutorial
 description: Drag and drop diagram elements, create new tasks, draw connectors from node to node.
 ---
 

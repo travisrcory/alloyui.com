@@ -2,7 +2,8 @@
 layout: single-doc
 title: Video
 tags: 'video'
-category: Video
+type: module
+category: Tutorial
 description: Creates an interactive HTML5 video player with fallback Flash video player.
 ---
 
