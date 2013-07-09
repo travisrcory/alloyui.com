@@ -2,7 +2,8 @@
 layout: single-doc
 title: Image Cropper
 tags: 'image-cropper'
-category: Image Cropper
+type: module
+category: Tutorial
 description: Provides a draggable/resizable cropper widget to crop image sizes.
 ---
 

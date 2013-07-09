@@ -2,7 +2,8 @@
 layout: single-doc
 title: Textbox List
 tags: 'textboxlist'
-category: Textbox List
+type: module
+category: Tutorial
 description: Displays users' choices to them as a graphic list.
 ---
 

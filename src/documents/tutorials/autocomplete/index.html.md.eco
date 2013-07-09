@@ -1,8 +1,9 @@
 ---
 layout: single-doc
 title: AutoComplete
-tags: 'autocomplete'
-category: AutoComplete
+tags: auto-complete
+type: module
+category: Tutorial
 description: Provides suggestions while users type into the field.
 ---
 
