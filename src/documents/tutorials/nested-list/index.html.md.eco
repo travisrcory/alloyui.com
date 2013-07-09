@@ -2,7 +2,8 @@
 layout: single-doc
 title: Nested List
 tags: 'nested-list'
-category: Nested List
+type: module
+category: Tutorial
 description: Gives the user the ability to interact with a list element.
 ---
 

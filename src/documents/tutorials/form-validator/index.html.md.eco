@@ -2,7 +2,8 @@
 layout: single-doc
 title: Form Validator
 tags: 'form-validator'
-category: Form Validator
+type: module
+category: Tutorial
 description: Provides a method of ensuring the validity of form entries.
 ---
 

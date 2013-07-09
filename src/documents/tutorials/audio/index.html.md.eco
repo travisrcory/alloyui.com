@@ -2,7 +2,8 @@
 layout: single-doc
 title: Audio
 tags: 'audio'
-category: Audio
+type: module
+category: Tutorial
 description: Creates an interactive audio player in HTML5 with fallback for old browsers.
 ---
 

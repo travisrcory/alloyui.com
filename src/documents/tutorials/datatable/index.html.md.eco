@@ -2,7 +2,8 @@
 layout: single-doc
 title: Data Table
 tags: 'datatable'
-category: Data Table
+type: module
+category: Tutorial
 description: Provides the user with a method of organizing, arranging, and editing tables of information.
 ---
 

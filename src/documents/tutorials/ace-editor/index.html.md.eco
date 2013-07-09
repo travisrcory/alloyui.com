@@ -2,7 +2,8 @@
 layout: single-doc
 title: Ace Editor
 tags: 'ace-editor'
-category: Ace Editor
+type: module
+category: Tutorial
 description: An embeddable code editor that matches the features of native editors.
 ---
 

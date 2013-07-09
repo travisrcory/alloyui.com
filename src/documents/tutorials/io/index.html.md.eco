@@ -2,7 +2,8 @@
 layout: single-doc
 title: I/O
 tags: 'io'
-category: I/O
+type: module
+category: Tutorial
 description: Allows you to make asynchronous HTTP (Ajax) requests.
 ---
 

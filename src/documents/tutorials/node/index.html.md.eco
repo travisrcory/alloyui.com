@@ -2,7 +2,8 @@
 layout: single-doc
 title: Node
 tags: 'node'
-category: Node
+type: module
+category: Tutorial
 description: Allows for interaction with the DOM.
 ---
 

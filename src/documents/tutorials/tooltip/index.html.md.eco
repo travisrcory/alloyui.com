@@ -2,7 +2,8 @@
 layout: single-doc
 title: Tooltip
 tags: 'tooltip'
-category: Tooltip
+type: module
+category: Tutorial
 description: Gives users contextual information or content, such as help text or images.
 ---
 
