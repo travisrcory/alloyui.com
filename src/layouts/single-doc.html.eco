@@ -14,35 +14,49 @@ layout: default
 
   <div class="span3 bs-docs-sidebar">
 
-    <p class="related">List of components</p>
+    <p class="related">General</p>
     <ul class="nav nav-list bs-docs-sidenav affix-top">
       <% for tutorial in @getCollection("tutorials").toJSON(): %>
-        <% if tutorial.category: %>
-          <% if tutorial.category == @document.title: %>
-            <li class="active"><a href="<%= @getSiteUrl() %><%= tutorial.url %>" class="iframe-link"><i class="icon-chevron-right"></i> <%= tutorial.category %></a></li>
+        <% if tutorial.type == "general": %>
+          <% if tutorial.title == @document.title: %>
+            <li class="active"><a href="<%= @getSiteUrl() %><%= tutorial.url %>"><i class="icon-chevron-right"></i> <%= tutorial.title %></a></li>
             <% else: %>
-            <li><a href="<%= @getSiteUrl() %><%= tutorial.url %>" class="iframe-link"><i class="icon-chevron-right"></i> <%= tutorial.category %></a></li>
+            <li><a href="<%= @getSiteUrl() %><%= tutorial.url %>"><i class="icon-chevron-right"></i> <%= tutorial.title %></a></li>
           <% end %>
         <% end %>
       <% end %>
     </ul>
 
+    <p class="related">List of modules</p>
+    <ul class="nav nav-list bs-docs-sidenav affix-top">
+      <% for tutorial in @getCollection("tutorials").toJSON(): %>
+        <% if tutorial.type == "module": %>
+          <% if tutorial.title == @document.title: %>
+            <li class="active"><a href="<%= @getSiteUrl() %><%= tutorial.url %>"><i class="icon-chevron-right"></i> <%= tutorial.title %></a></li>
+            <% else: %>
+            <li><a href="<%= @getSiteUrl() %><%= tutorial.url %>"><i class="icon-chevron-right"></i> <%= tutorial.title %></a></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 
   <div class="span9">
 
     <h1><%= @document.title %></h1>
 
-    <ul class="nav nav-tabs">
-      <li class="active">
-        <a href="#">Introduction</a>
-      </li>
-      <% for example in @getCollection("examples").toJSON(): %>
-        <% if example.tags == @document.tags: %>
-          <li><a href="<%= @getSiteUrl() %><%= example.url %>"><%= example.title %></a></li>
+    <% if @document.type == "module": %>
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#">Introduction</a>
+        </li>
+        <% for example in @getCollection("examples").toJSON(): %>
+          <% if example.tags == @document.tags: %>
+            <li><a href="<%= @getSiteUrl() %><%= example.url %>"><%= example.title %></a></li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    <% end %>
 
     <% if @document.description: %>
       <p><%= @document.description %></p>
@@ -50,7 +64,5 @@ layout: default
     <% end %>
 
     <%- @content %>
-
   </div>
-
 </div>
