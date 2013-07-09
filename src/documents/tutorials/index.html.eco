@@ -38,7 +38,11 @@ layout: default
 
     <p>This is an ultra-small bit of JavaScript that enables you to load any AlloyUI component on your page.</p>
 
+<<<<<<< HEAD
     <hr>
+=======
+<p>Let's create an AUI instance and do some simple stuff, like capturing a DOM element and attaching a click event to it. Then let's run some transitions!</p>
+>>>>>>> be5f699... changed "YUI" to "AUI" on line 19. Changed the tab size to 2 from 4 on lines 47-56
 
     <h4>2. Getting started!</h4>
 
@@ -60,9 +64,15 @@ layout: default
   }
 );</code></pre>
 
+<<<<<<< HEAD
     <div style="text-align: center;">
       <button id="try-btn" class="btn btn-large btn-block btn-primary" type="button">Try me now!</button>
     </div>
+=======
+<div style="text-align: center;">
+	<button id="try-btn" class="btn btn-large btn-block btn-primary" type="button">Try me now!</button>
+</div>
+>>>>>>> be5f699... changed "YUI" to "AUI" on line 19. Changed the tab size to 2 from 4 on lines 47-56
 
     <hr>
 
@@ -82,6 +92,7 @@ layout: default
   }
 );</code></pre>
 
+<<<<<<< HEAD
     <p style="text-align: center; font-size: 16px; font-weight: bold;"><a href="#" id="tooltip">Hover for a simple tooltip</a></p>
 
   </div>
@@ -96,6 +107,23 @@ layout: default
     <p style="text-align: center; margin-bottom: 25px;">AlloyUI has more than 60 components! Go ahead and navigate between them using the list on the left.</p>
   </div>
 
+=======
+<div id="myCarousel">
+	<div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/1.jpg);"></div>
+	<div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/2.jpg);"></div>
+	<div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/3.jpg);"></div>
+	<div class="aui-carousel-item" style="background: url(<%= @getSiteUrl() %>/carousel/img/4.jpg);"></div>
+</div>
+
+<div class="row">
+	<div class="span9 title">
+		<p class="call">and this is just the beginning!</p>
+	</div>
+</div>
+
+<div class="row">
+	<p style="text-align: center; margin-bottom: 25px;">Go ahead and navigate between other components using the list on the left.</p>
+>>>>>>> be5f699... changed "YUI" to "AUI" on line 19. Changed the tab size to 2 from 4 on lines 47-56
 </div>
 
 <script src="<%= @getAssetsUrl() %>/js/tutorial-demo.js"></script>
