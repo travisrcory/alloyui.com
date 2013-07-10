@@ -100,7 +100,7 @@ AUI().use(
     new A.PortalLayout(
       {
         dragNodes: '.contentNode',
-        dropContainer: '#dropContainer'
+        dropContainer: '#dropContainer',
         dropNodes: '#myPortalLayout',
         proxyNode: A.Node.create('<div class="proxyNode"></div>')
       }
