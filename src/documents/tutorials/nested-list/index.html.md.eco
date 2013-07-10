@@ -63,7 +63,7 @@ AUI().ready(
           return true;
         },
         dropOn: 'myList',
-        nodes: '#myList li',
+        nodes: '#myList li'
       }
     );
   }
@@ -109,7 +109,7 @@ AUI().ready(
           return true;
         },
         dropOn: 'myList',
-        nodes: '#myList li',
+        nodes: '#myList li'
       }
     );
   }
