@@ -107,7 +107,7 @@ AUI().use(
     new A.Video(
       {
         contentBox: '#myVideo',
-        ogvUrl: 'http://videos.liferay.com/lifecasts/portal/6.0/106.ogv'
+        ogvUrl: 'http://alloyui.com/video/movie.ogg'
       }
     ).render();
   }
