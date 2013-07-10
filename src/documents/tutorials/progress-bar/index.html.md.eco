@@ -32,7 +32,7 @@ Create a HTML element:
 
 ``` html
 <div id="myProgressBar">
-  <button class="load">Load</button>
+  <button class="load" value="load">Load</button>
   <div class="bar"></div>
 </div>
 ```
@@ -43,7 +43,7 @@ Now create a new instance of Progress Bar component, then tell to `boundingBox` 
 AUI().use(
   'aui-progressbar',
   function(A) {
-    new A.ProgressBar(
+    var progressBar = new A.ProgressBar(
       {
         boundingBox: '#myProgressBar',
         contentBox: '.bar',
@@ -74,7 +74,7 @@ AUI().use(
   'aui-progressbar',
   'node-load',
   function(A) {
-    new A.ProgressBar(
+    var progressBar = new A.ProgressBar(
       {
         boundingBox: '#myProgressBar',
         contentBox: '.bar',
@@ -115,7 +115,7 @@ AUI().use(
   'node-load',
   'async-queue',
   function(A) {
-    new A.ProgressBar(
+    var progressBar = new A.ProgressBar(
       {
         boundingBox: '#myProgressBar',
         contentBox: '.bar',
@@ -136,8 +136,8 @@ AUI().use(
         fn: function() {
           ++step;
 
-          progressBar.set('label', 'Loading... ' + step + '%');
-          progressBar.set('value', step);
+          progressBar.set('label', 'Loading... ', + step + '%');
+          progressBar.set('value', + step);
         },
         iterations: 100,
         timeout: 1
