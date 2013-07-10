@@ -16,7 +16,7 @@ order: 1
 
 <h4>2. Getting started!</h4>
 
-<p>Let's create an YUI instance and do some simple stuff, like capturing a DOM element and attaching a click event to it. Then let's run some transitions!</p>
+<p>Let's create an AUI instance and do some simple stuff, like capturing a DOM element and attaching a click event to it. Then let's run some transitions!</p>
 
 <pre><code>AUI().use(
 'node',
