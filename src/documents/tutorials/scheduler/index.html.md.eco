@@ -43,7 +43,7 @@ Now create a new instance of Scheduler component.
 
 First, let's create an `events` variable where we stored our first calendar event, setting its name via `content` and a start and end date. Then we'll initialize the calendar view we're going to use, `weekView`.
 
-Finally, we'll create a new Scheduler with its `boundingBox` set to our HTML element, its `date` set to when we scheduled our first event, and pass in `events` for `items` and `weekView` for `views`, setting `render` to `true` so that it renders on load.
+Finally, we'll create a new Scheduler with its `boundingBox` set to our HTML element, its `currentDate` set to when we scheduled our first event, and pass in `events` for `events` and `weekView` for `views`, setting `render` to `true` so that it renders on load.
 
 ``` javascript
 AUI().use(
@@ -53,7 +53,7 @@ AUI().use(
       {
         content: 'Partial Lunar Eclipse',
         endDate: new Date(2013, 4, 25, 5),
-        startDate: new Date(2012, 4, 25, 1)
+        startDate: new Date(2013, 4, 25, 1)
       }
     ];
 
@@ -62,8 +62,8 @@ AUI().use(
     new A.Scheduler(
       {
         boundingBox: '#myScheduler',
-        date: new Date(2013, 4, 25),
-        items: events,
+        currentDate: new Date(2013, 4, 25),
+        events: events,
         render: true,
         views: [weekView]
       }
@@ -73,7 +73,7 @@ AUI().use(
 ```
 
 <div class="alert alert-info">
-  <strong>Note:</strong> you don't have to set `date` inside your new Scheduler instance, but be forewarned, if you don't supply a date, Scheduler will use the current date as its starting date, sometimes making it hard to find your events!
+  <strong>Note:</strong> you don't have to set `currentDate` inside your new Scheduler instance, but be forewarned, if you don't supply a date, Scheduler will use the current date as its starting date, sometimes making it hard to find your events!
 </div>
 
 ---
@@ -105,8 +105,8 @@ AUI().use(
       {
         activeView: weekView,
         boundingBox: '#myScheduler',
-        date: new Date(2013, 4, 25),
-        items: events,
+        currentDate: new Date(2013, 4, 25),
+        events: events,
         render: true,
         views: [dayView, weekView, monthView, agendaView]
       }
@@ -139,9 +139,9 @@ AUI().use(
     new A.Scheduler(
       {
         boundingBox: '#myScheduler',
-        date: new Date(2013, 4, 25),
+        currentDate: new Date(2013, 4, 25),
         eventRecorder: eventRecorder,
-        items: events,
+        events: events,
         render: true,
         activeView: weekView,
         views: [dayView, weekView, monthView, agendaView]
@@ -161,7 +161,7 @@ AUI().use(
     var events = [
       {
         content: 'Partial Lunar Eclipse',
-        endDate: new Date(2012, 4, 25, 5),
+        endDate: new Date(2013, 4, 25, 5),
         startDate: new Date(2013, 4, 25, 1)
       },
       {
@@ -191,9 +191,9 @@ AUI().use(
       {
         activeView: weekView,
         boundingBox: '#myScheduler',
-        date: new Date(2012, 4, 25),
+        currentDate: new Date(2012, 4, 25),
         eventRecorder: eventRecorder,
-        items: events,
+        event: events,
         render: true,
         views: [dayView, weekView, monthView, agendaView]
       }
