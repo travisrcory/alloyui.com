@@ -1,0 +1,95 @@
+---
+layout: single-doc
+title: Scroller 
+tags: 'scroller'
+category: Scroller
+description: Provides an interactive way of cycling through elements.
+---
+
+#### Getting Started
+
+First load the seed file, if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+```
+
+Then initialize AlloyUI and load the Carousel module.
+
+``` javascript
+AUI().use(
+  'aui-scroller, 'anim-node-plugin',
+  function(A) {
+    // code goes here
+  }
+);
+```
+
+---
+
+#### Using Scroller
+
+Create a list of elements that contains the images you want to show:
+
+``` html
+<div id="wrapper">
+  <div id="scroller">
+    <div class=".scroll">
+      <div id="scroller-content">
+        //scroller content <div></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+```
+
+Now create a new instance of Scroller component, then tell to `contentBox` where it's going to be attached and define some `width` and `height`. Finally, let's render it!
+
+``` javascript
+AUI().use(
+  'aui-scroller', 'anim-node-plugin',
+  function(A) {
+    var component = new A.Scroller(
+    {
+      contentBox: '#scroller-content',
+      height: 45,
+      orientation: 'horizontal',
+      width: 640
+    }).render();
+);
+```
+
+<div class="alert alert-info">
+  <strong>Note:</strong> you could also use `boundingBox`, not only `contentBox` to be initialized.<br>
+  Read more about the [differences between them](https://github.com/liferay/alloy-ui/wiki/FAQs).
+</div>
+
+---
+
+#### Configuring Scroller
+
+There are some other options that you can pass to your Scroller instance.
+
+For example, you can set the Scroller to be either horizontal or veritcal by defining `orientation` - any number or `rand` (random value) to indicate the image.
+
+``` javascript
+AUI().use(
+  'aui-scroller', 'anim-node-plugin',
+  function(A) {
+    var component = new A.Scroller(
+    {
+      contentBox: '#scroller-content',
+      height: 45,
+      orientation: 'vertical',
+      width: 640
+    }).render();
+);
+```
+
+You can also use CSS to edit the Scroller.
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>

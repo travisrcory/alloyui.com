@@ -1,0 +1,20 @@
+---
+title: Basic Example
+layout: single-example
+slug: 'scroller'
+tags: 'scroller'
+category: Scroller
+description: Allows users to scroller through items.
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/scroller/css/basic.css" />
+
+
+<%- @readFile('basic-markup.html', 'html') %>
+
+<%- @codeFile('basic-markup.html', 'html') %>
+<%- @codeFile('basic.js', 'javascript') %>
+
+<script>
+  <%- @readFile('basic.js', 'javascript') %>
+</script>

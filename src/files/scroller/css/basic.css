@@ -1,0 +1,18 @@
+body {
+	font-size: 12px;
+}
+
+#wrapper {
+	padding: 10px;
+}
+
+.aui-scroller-horizontal {
+	background: #FFF none repeat 0 0;
+	border: 1px solid #CCCCCC;
+	padding: 10px;
+}
+
+.aui-scroller-horizontal .aui-scroller-item {
+	height: 100%;
+	padding: 30px;
+}
