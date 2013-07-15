@@ -1,0 +1,13 @@
+p {
+	font: italic bold 44px "Helvetica Neue", helvetica, serif;
+}
+
+#wrapper {
+	padding: 10px;
+}
+
+#colorBox {
+	border: 1px solid #CCC;
+	width: 300px;
+	height: 300px;
+}

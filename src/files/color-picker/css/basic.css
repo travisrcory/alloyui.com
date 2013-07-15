@@ -1,0 +1,176 @@
+
+.aui-colorpicker {
+    width: 315px;
+}
+.aui-colorpicker-container {
+    height: 192px;
+    position: relative;
+}
+.aui-colorpicker-canvas {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #FF0000;
+    background-image: url("picker_bg.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    height: 184px;
+    left: 5px;
+    outline-color: -moz-use-text-color;
+    outline-style: none;
+    outline-width: 0;
+    position: absolute;
+    top: 5px;
+    width: 184px;
+}
+.aui-colorpicker-controls {
+    height: 115px;
+    left: 226px;
+    position: absolute;
+    top: 75px;
+    width: 80px;
+}
+.aui-colorpicker-controls .aui-field-content .aui-field-label {
+    margin-top: 0;
+    width: 20%;
+}
+.aui-colorpicker-controls .aui-field-content .aui-field-input-text {
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    width: 60%;
+}
+.aui-colorpicker-controls .aui-field-content {
+    clear: both;
+    padding-bottom: 3px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 3px;
+}
+.aui-colorpicker-hue-thumb {
+    cursor: default;
+    height: 7px;
+    position: absolute;
+    width: 18px;
+}
+.aui-colorpicker-hue-thumb-image {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("color_indic.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    display: block;
+    height: 7px;
+    margin-left: -2px;
+    margin-top: -2px;
+    width: 18px;
+}
+.aui-colorpicker-hue-canvas {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("hue.png");
+    background-origin: padding-box;
+    background-position: -2px -2px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    height: 186px;
+    left: 200px;
+    outline-color: -moz-use-text-color;
+    outline-style: none;
+    outline-width: 0;
+    position: absolute;
+    top: 5px;
+    width: 14px;
+}
+.aui-colorpicker-mask {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.aui-colorpicker-swatch {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-color: #727C81;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: #727C81;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: solid;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 2px;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: #727C81;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: solid;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 2px;
+    border-top-color: #727C81;
+    border-top-style: solid;
+    border-top-width: 2px;
+    height: 60px;
+    left: 226px;
+    position: absolute;
+    top: 5px;
+    width: 60px;
+}
+.aui-colorpicker-swatch-current, .aui-colorpicker-swatch-original {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #FFFFFF;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    height: 30px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.aui-colorpicker-swatch-original {
+    bottom: 0;
+    cursor: pointer;
+    top: auto;
+}
+.aui-colorpicker-thumb {
+    cursor: default;
+    position: absolute;
+}
+.aui-colorpicker-thumb-image {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("select.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    display: block;
+    height: 11px;
+    width: 11px;
+}
+.aui-colorpicker-container .aui-colorpicker-hue-slider-content {
+    display: inline;
+    position: static;
+}
