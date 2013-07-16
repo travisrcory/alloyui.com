@@ -1,0 +1,147 @@
+---
+layout: single-doc
+title: Drawing
+tags: 'drawing'
+category: Drawing
+description: Provides an exciting tool to create interactive and engaging drawings.
+---
+
+#### Getting Started
+
+First load the seed file, if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+```
+
+Then initialize AlloyUI and load the Drawing module.
+
+``` javascript
+AUI().use(
+  'aui-drawing',
+  function(A) {
+    // code goes here
+  }
+);
+```
+
+---
+
+#### Using Drawing
+
+Create a html to hold our drawing:
+
+``` html
+<div id="myDrawing">
+```
+
+Now create a new instance of the Drawing module, then create a new `drawing` variable. Then you must decide what kind of drawing you would like to create!
+
+``` javascript
+AUI().use(
+  'aui-drawing',
+  function(A) {
+    var drawing = A.Drawing.create('#myDrawing', width, height);
+  }
+);
+```
+
+<div class="alert alert-info">
+  <strong>Note:</strong> depending on the drawing you want to create you might have different variables to define.
+</div>
+
+---
+
+#### Configuring Drawing
+
+Now that you have started your Drawing module, it is time to decide what kind of drawing you would like to render. There are many choices.
+
+For example, you can create an awesome animation! First we will need to define a `targerts` variable. Then we will give the objects in that variable differnt characteristics - finally we shall render them.
+
+``` javascript
+
+AUI().use(
+  'aui-drawing',
+  function(A) {
+    var drawing = A.Drawing.create('#myDrawing', 800, 600);
+    var targets = drawing.createSet();
+
+    targets.push(
+    drawing.circle(300, 100, 20),
+    drawing.circle(300, 150, 20),
+    drawing.circle(300, 200, 20)
+    );
+
+    targets.attr(
+      {
+        fill: '#CCC',
+        stroke: '#555',
+        'stroke-dasharray': '- '
+      }
+    );
+
+    var labels = drawing.createSet();
+
+    labels.push(
+    drawing.text(330, 100, 'linear (default)'),
+    drawing.text(330, 150, 'bounce'),
+    drawing.text(330, 200, 'backOut')
+    );
+
+    labels.attr(
+      {
+        font: '12px Fontin-Sans, Arial',
+        fill: '#000',
+        'text-anchor': 'start'
+      }
+    );
+
+    var movers = drawing.createSet();
+
+    movers.push(
+    drawing.circle(100, 100, 20),
+    drawing.circle(100, 150, 20),
+    drawing.circle(100, 200, 20)
+  );
+
+  movers.attr(
+    {
+      fill: '#000',
+      stroke: '#000',
+      'fill-opacity': 0,
+      'stroke-opacity': 0.6
+    }
+  );
+
+  var onClick = function(event, defaultHue, easingType, duration) {
+    this.cx = this.cx || 300;
+
+    this.animate(
+      {
+        cx: this.cx,
+        'stroke-width': this.cx / 100,
+        fill: this.cx - 100 ? 'hsb(' + defaultHue + ', .75, .75)' : '#000',
+        'fill-opacity': +!!(this.cx - 100)
+      },
+      duration,
+      easingType
+    );
+
+    this.cx = this.cx == 300 ? 100 : 300;
+  };
+
+  var duration = 1000;
+
+  movers.item(0).on('click', A.rbind(onClick, movers.item(0), 0, null, duration));
+  movers.item(1).on('click', A.rbind(onClick, movers.item(1), 0.1, 'bounce', duration));
+  movers.item(2).on('click', A.rbind(onClick, movers.item(2), 0.2, 'backOut', duration));
+
+  }
+);
+
+
+```
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>
