@@ -1,0 +1,131 @@
+AUI().use(
+	'aui-drawing-base', 'aui-drawing-animate', 
+	function(A) {
+	(function () {
+		A.Drawing.prototype.pieChart = function (cx, cy, r, values, labels, stroke) {
+			var paper = this;
+			var rad = Math.PI / 180;
+			var chart = this.createSet();
+
+			function sector(cx, cy, r, startAngle, endAngle, params) {
+				var x1 = cx + r * Math.cos(-startAngle * rad),
+					x2 = cx + r * Math.cos(-endAngle * rad),
+					y1 = cy + r * Math.sin(-startAngle * rad),
+					y2 = cy + r * Math.sin(-endAngle * rad);
+				return paper.path(['M', cx, cy, 'L', x1, y1, 'A', r, r, 0, +(endAngle - startAngle > 180), 0, x2, y2, 'z']).attr(params);
+			}
+
+			function sector2(cx, cy, r, startAngle, endAngle, params) {
+				var x1 = cx + r * Math.cos(-startAngle * rad),
+					x2 = cx + r * Math.cos(-endAngle * rad),
+					y1 = cy + r * Math.sin(-startAngle * rad),
+					y2 = cy + r * Math.sin(-endAngle * rad);
+				return paper.path(['M', x1, y1, 'A', r, r, 0, +(endAngle - startAngle > 180), 0, x2, y2]).attr(params);
+			}
+
+			var angle = 0;
+			var total = 0;
+			var start = 0;
+
+			var	process = function (j) {
+				var value = values[j];
+				var angleplus = 360 * value / total;
+				var popangle = angle + (angleplus / 2);
+				var color = 'hsb(' + start + ', 1, .5)';
+
+				var ms = 500;
+				var delta = 30;
+				var bcolor = 'hsb(' + start + ', 1, 1)';
+
+				var p = sector(cx, cy, r, angle, angle + angleplus,
+					{
+						gradient: '90-' + bcolor + '-' + color,
+						stroke: stroke,
+						'stroke-width': 1
+					}
+				);
+
+				var p2 = sector2(cx, cy, r-10, angle, angle + angleplus,
+					{
+						stroke: '#fff',
+						'stroke-opacity': 0.2,
+						'stroke-width': 15
+					}
+				);
+
+				var txt = paper.text(
+					(cx + (r + delta + 55) * Math.cos(-popangle * rad)),
+					(cy + (r + delta + 25) * Math.sin(-popangle * rad)),
+					labels[j]
+				);
+
+				txt.attr(
+					{
+						fill: bcolor,
+						stroke: 'none',
+						opacity: 0,
+						'font-family': 'Fontin-Sans, Arial', 'font-size': '20px'
+					}
+				);
+
+				p.hover(
+					function () {
+						p.animate(
+							{
+								scale: [1.1, 1.1, cx, cy]
+							},
+						ms, 'elastic');
+
+						txt.animate(
+							{
+								opacity: 1
+							},
+						ms, 'elastic');
+					},
+					function () {
+						p.animate(
+							{
+								scale: [1, 1, cx, cy]
+							},
+							ms, 'elastic');
+
+						txt.animate(
+							{
+								opacity: 0
+							},
+						ms);
+					}
+				);
+
+				angle += angleplus;
+
+				chart.push(p);
+				chart.push(txt);
+
+				start += .1;
+			};
+
+			for (var i = 0, length = values.length; i < length; i++) {
+				total += values[i];
+			}
+
+			for (var i = 0; i < length; i++) {
+				process(i);
+			}
+
+			return chart;
+		};
+
+		var values = [];
+		var labels = [];
+
+		A.all('tr').each(
+			function(item, index, collection) {
+				values.push(parseInt(item.one('td').text(), 10));
+				labels.push(item.one('th').text());
+			}
+		);
+
+		A.Drawing.create('#myDrawing', 700, 700).pieChart(350, 350, 200, values, labels, '#fff');
+	})();
+});

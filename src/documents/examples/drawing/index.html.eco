@@ -1,0 +1,19 @@
+---
+title: Basic Example
+layout: single-example
+slug: 'drawing'
+tags: 'drawing'
+category: Drawing
+description: Allows users to create different Drawings
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/drawing/css/basic.css" />
+
+<p><%- @readFile('basic-markup.html', 'html') %></p>
+
+<%- @codeFile('basic-markup.html', 'html') %>
+<%- @codeFile('basic.js', 'javascript') %>
+
+<script>
+  <%- @readFile('basic.js', 'javascript') %>
+</script>

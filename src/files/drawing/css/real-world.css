@@ -1,0 +1,11 @@
+#myDrawing {
+	height: 700px;
+	margin: 0 auto;
+	width: 700px;
+}
+
+#wrapper {
+	background: #FCFCFC none repeat 0 0;
+	margin: 10px;
+	padding: 10px;
+}

@@ -1,0 +1,18 @@
+---
+title: Real World Example
+layout: single-example
+slug: 'drawing'
+tags: 'drawing'
+category: Drawing
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/drawing/css/real-world.css" />
+
+<%- @readFile('real-world-markup.html', 'html') %>
+
+<%- @codeFile('real-world-markup.html', 'html') %>
+<%- @codeFile('real-world.js', 'javascript') %>
+
+<script>
+  <%- @readFile('real-world.js', 'javascript') %>
+</script>
