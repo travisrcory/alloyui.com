@@ -1,0 +1,93 @@
+body {
+	font-size: 12px;
+}
+
+#wrapper {
+	padding: 10px;
+}
+		
+.scroller {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+	background-image: -moz-linear-gradient(#DDDDDD, #F0F0F0);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(1, #DDDDDD),
+		color-stop(0.5, #F0F0F0)
+	);
+	margin: 5px;
+}
+
+.scroller h1 {
+	color: #474A4B;
+	font-weight: bold;
+	font-size: 1em;
+	line-height: 45px;
+	margin: 0;
+	padding: 0 20px;
+}
+
+#scroller {
+	height: 45px;
+	width: 750px;
+}
+
+#scroller h1 {
+	border-right: 1px solid #F0F0F0;
+	float: left;
+}
+
+.scroll .aui-scroller-item {
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.scroll .aui-scroller-item img {
+	opacity: 0;
+	filter: alpha(opacity = 0);
+}
+
+.scroll .aui-scroller-horizontal {
+	border-left: 1px solid #CACACA;
+	}
+
+.scroll .aui-scroller-horizontal .aui-scroller-item {
+	height: 100%;
+	padding: 0 10px;
+}
+
+.scroll .aui-scroller-horizontal .aui-scroller-item img {
+	height: 100%;
+}
+
+.scroll .aui-scroller-content .cisco {
+	background-image: url(../img/1.png);
+}
+
+.scroll .aui-scroller-content .sesame-street {
+	background-image: url(../img/2.png);
+}
+
+.scroll .aui-scroller-content .t-mobile {
+	background-image: url(../img/3.png);
+}
+
+.scroll .aui-scroller-content .societe-generale {
+	background-image: url(../img/4.png);
+}
+
+.scroll .aui-scroller-content .barclays {
+	background-image: url(../img/5.png);
+}
+
+.scroll .aui-scroller-content .autozone {
+	background-image: url(../img/6.png);
+}
+
+.scroll .aui-scroller-content .china-mobile {
+	background-image: url(../img/7.png);
+}
