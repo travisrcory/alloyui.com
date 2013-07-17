@@ -63,7 +63,11 @@
           </a>
           <ul id="version-dropdown" class="dropdown-menu">
             <li><a tabindex="-1" href="/">v2.0.x</a></li>
+<<<<<<< HEAD
             <li><a tabindex="-1" href="/versions/1.5.x">v1.5.x</a></li>
+=======
+            <li><a tabindex="-1" href="/versions/1.0.x">v1.0.x</a></li>
+>>>>>>> dc69bcd2189cb4ced5c123c3c27d8fcea55c7f83
           </ul>
           <div class="pull-right">
             <ul class="nav">

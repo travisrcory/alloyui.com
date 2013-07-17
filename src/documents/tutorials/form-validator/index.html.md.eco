@@ -53,7 +53,7 @@ AUI().use(
         boundingBox: '#myForm',
         rules: {
           name: {
-            required: true,
+            required: true
           }
         }
       }
@@ -62,7 +62,7 @@ AUI().use(
 );
 ```
 
-Now, if the user attempted to subit the form without filling out the name field, they would receive an alert reading, "This field is required."
+Now, if the user attempted to submit the form without filling out the name field, they would receive an alert reading, "This field is required."
 
 ---
 
