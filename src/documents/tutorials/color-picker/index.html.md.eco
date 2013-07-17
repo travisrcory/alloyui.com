@@ -1,0 +1,82 @@
+---
+layout: single-doc
+title: Color Picker
+tags: 'color-picker"
+category: Color Picker
+description: Provides the user the option to change color.
+---
+
+#### Getting Started
+
+First load the seed file, if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+```
+
+Then initialize AlloyUI and load the Color Picker module.
+
+``` javascript
+AUI().ready(
+  'aui-color-picker-base',
+  function(A) {
+    // code goes here
+  }
+);
+```
+
+---
+
+#### Using Color Picker
+
+Create an HTML element to hold the Color Picker.
+
+``` html
+<div id="wrapper">
+  <div id="color-picker"></div>
+</div>
+```
+
+Now let's create a new instance of Color Picker.
+
+``` javascript
+AUI().ready(
+  'aui-color-picker-base',
+  function(A) {
+    new A.ColorPicker(
+    	{
+    	render: '#color-picker',
+    	}
+  	);
+  }
+);
+```
+
+---
+
+#### Configuring  Color Picker
+
+When selecting a color it would be nice to see what was chosen, next we will add a box that displays the chosen color.
+
+``` javascript
+AUI().ready(
+  'aui-color-picker-base',
+  function(A) {
+   colorPicker = new A.ColorPicker(
+      {
+        render: '#color-picker'
+      }
+    );
+
+  colorPicker.on('colorChange', function(event) {
+  var colorBox = A.one("#colorBox");
+  var rgb = colorPicker.get('rgb');
+  
+  colorBox.setStyle('backgroundColor', 'rgb(' + [rgb.r, rgb.g, rgb.b].join(',') + ')');
+  });
+});
+```
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>

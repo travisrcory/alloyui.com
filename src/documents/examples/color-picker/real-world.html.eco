@@ -1,0 +1,20 @@
+---
+title: Real World Example
+layout: single-example
+slug: 'color-picker'
+tags: 'color-picker'
+category: Color Picker
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/color-picker/css/real-world.css" />
+
+<div class="twitter-box">
+  <%- @readFile('real-world-markup.html', 'html') %>
+</div>
+
+<%- @codeFile('real-world-markup.html', 'html') %>
+<%- @codeFile('real-world.js', 'javascript') %>
+
+<script>
+  <%- @readFile('real-world.js', 'javascript') %>
+</script>
