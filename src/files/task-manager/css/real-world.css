@@ -1,0 +1,47 @@
+#wrapper {
+	padding: 10px;
+}
+
+#animation {
+	position: relative;
+	height: 55px;
+	width: 500px;
+	}
+
+#animationBox {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: #eee;
+	border: 1px solid #ccc;
+}
+
+.aui-button {
+	clear: both;
+	display: block;
+}
+
+.aui-field-content {
+	margin: 10px 0;
+}
+
+.aui-field-input {
+	width: 40px;
+}
+
+.info-box {
+	background-color: #eee;
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 1em 1em 2em;
+}
+
+.info-box.running-task-manager {
+	background-color: #dff4ff;
+	border-color: #a7cedf;
+}
+
+.info-box.running-no-task-manager {
+	background-color: #ffc;
+	border-color: #fc0;
+}
