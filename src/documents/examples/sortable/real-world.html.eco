@@ -1,0 +1,18 @@
+---
+title: Real World Example
+layout: single-example
+slug: 'sortable'
+tags: 'sortable'
+category: Sortable
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/sortable/css/real-world.css" />
+
+<%- @readFile('real-world-markup.html', 'html') %>
+
+<%- @codeFile('real-world-markup.html', 'html') %>
+<%- @codeFile('real-world.js', 'javascript') %>
+
+<script>
+  <%- @readFile('real-world.js', 'javascript') %>
+</script>
