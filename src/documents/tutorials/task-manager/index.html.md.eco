@@ -1,0 +1,201 @@
+---
+layout: single-doc
+title: Task Manager
+tags: 'task-manager'
+category: Task Manager
+description: Provides a task manager to help keep a page running smoothly.
+---
+
+#### Getting Started
+
+First load the seed file, if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+```
+
+Then initialize AlloyUI and load the Task Manager module.
+
+``` javascript
+AUI().use(
+  'aui-task-manager', 'aui-base',
+  function(A) {
+    // code goes here
+  }
+);
+```
+
+---
+
+#### Using Task Manager
+
+Create a list of elements that contains the images you want to show:
+
+``` html
+<div id="task-manager"></div>
+```
+
+Now create a new instance of Task Manager component, then set up some variables. Finally, let's render it!
+
+``` javascript
+AUI().ready(
+  'aui-task-manager', 'aui-base',
+  function(A) {
+    var numTimersNode = A.one('#numTimers');
+    var taskLengthNode = A.one('#numTimers');
+    var infoBoxNode = A.one('#infoBox');
+
+  function getNumTimers() {
+    return parseInt(numTimersNode.val());
+  }
+
+  function getTaskLength() {
+    return parseInt(taskLengthNode.val());
+  }
+
+  var ids = [];
+
+  function stopTasks() {
+    infoBoxNode.removeClass('running-task-manager').removeClass('running-no-task-manager');
+
+    A.Array.each(
+      ids,
+      function(item, index, collection) {
+        A.clearInterval(item);
+        window.clearInterval(item);
+      }
+    );
+
+    ids = [];
+  }
+
+  var now = A.Lang.now;
+
+  var counter = 0;
+  var counterNode = A.one('#counter');
+
+  var incrementCounter = function() {
+    counterNode.html(counter++);
+  };
+  }
+);
+```
+---
+
+#### Configuring Task Manager
+
+There are some other options that you can pass to your Task Manager instance.
+
+For example, we will set up a test so that you can see how the browser runs with the task manager on.
+
+``` javascript
+AUI().ready(
+  'aui-task-manager', 'aui-base',
+  function(A) {
+    var numTimersNode = A.one('#numTimers');
+    var taskLengthNode = A.one('#numTimers');
+    var infoBoxNode = A.one('#infoBox');
+
+  function getNumTimers() {
+    return parseInt(numTimersNode.val());
+  }
+
+  function getTaskLength() {
+    return parseInt(taskLengthNode.val());
+  }
+
+  var ids = [];
+
+  function stopTasks() {
+    infoBoxNode.removeClass('running-task-manager').removeClass('running-no-task-manager');
+
+    A.Array.each(
+      ids,
+      function(item, index, collection) {
+        A.clearInterval(item);
+        window.clearInterval(item);
+      }
+    );
+
+    ids = [];
+  }
+
+  var now = A.Lang.now;
+
+  var counter = 0;
+  var counterNode = A.one('#counter');
+
+  var incrementCounter = function() {
+    counterNode.html(counter++);
+  };
+
+  function createTest(hostObject) {
+    return function() {
+      var numTimers = getNumTimers();
+      var taskLength = getTaskLength();
+
+      for (var i = 0; i < numTimers; i++) {
+        ids.push(
+          hostObject.setInterval(
+            function() {
+              var start = now();
+
+              while (now() - start < taskLength) {
+                incrementCounter();
+              }
+            },
+            50
+          )
+        );
+      }
+    }
+  }
+
+  var withTaskManager = createTest(A);
+  var withoutTaskManager = createTest(window);
+
+  var withTaskManagerNode = A.one('#withTaskManager');
+  var withoutTaskManagerNode = A.one('#withoutTaskManager');
+  var stopTasksNode = A.one('#stopTasks');
+
+  withTaskManagerNode.on(
+    'click',
+    function(event) {
+      event.preventDefault();
+
+      stopTasks();
+      withTaskManager();
+
+      infoBoxNode.addClass('running-task-manager');
+    }
+  );
+
+  withoutTaskManagerNode.on(
+    'click',
+    function(event) {
+      event.preventDefault();
+
+      stopTasks();
+      withoutTaskManager();
+
+      infoBoxNode.addClass('running-no-task-manager');
+    }
+  );
+
+  stopTasksNode.on(
+    'click',
+    function(event) {
+      event.preventDefault();
+
+      stopTasks();
+    }
+  );
+  }
+);
+```
+
+This module is best demonstrated through an example.
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>
