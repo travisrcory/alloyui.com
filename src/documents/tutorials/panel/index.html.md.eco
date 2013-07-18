@@ -1,0 +1,101 @@
+---
+layout: single-doc
+title: Panel
+tags: 'panel'
+category: Panel
+description: Allows the user to create panels.
+---
+
+#### Getting Started
+
+First load the seed file, if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+```
+
+Then initialize AlloyUI and load the Carousel module.
+
+``` javascript
+AUI().use(
+  'aui-panel',
+  function(A) {
+    // code goes here
+  }
+);
+```
+
+---
+
+#### Using Panel
+
+Create a `div` to contain your panel:
+
+``` html
+<div id="myPanel" class="panel">
+```
+
+Now create a new instance of Panel component,  set if the panel is collapsible and the `bodyContent` to your desired text. Tell `headerContent` what the header will be. Finally, let's render it!
+
+``` javascript
+AUI().ready(
+  'aui-panel',
+  function(A) {
+    new A.Panel(
+      {
+        bodyContent: "This is my first panel! I can put any information I want here",
+        collapsible: true,
+        headerContent: 'My First Panel!'
+      }
+    ).render('#myPanel');
+  }
+);
+```
+
+<div class="alert alert-info">
+  <strong>Note:</strong> you could also use `collapsed`, in addtion to `collapsible`. If it is set to `true` the panel will display collapsed.
+</div>
+
+---
+
+#### Configuring Panel
+
+There are some other options that you can pass to your Panel instance.
+
+For example, you can create a nested panel by  that will appear by defining render to `.panelContainer.bodyNode`.
+
+``` javascript
+AUI().ready(
+  'aui-panel',
+  function(A) {
+    new A.Panel(
+      {
+        bodyContent: "This is my first panel! I can put any information I want here",
+        collapsible: true,
+        headerContent: 'My First Panel!'
+      }
+    ).render(panelContainer.bodyNode);
+  }
+);
+```
+
+Also, you can set `boundingBox` to the panel HTML element, set the `contentBox` to where the content will be located in the panel. This allows you to create a panel from the markup in the HTML!
+
+``` javascript
+AUI().ready(
+  'aui-panel',
+  function(A) {
+    new A.Panel(
+      {
+        collapsible: true,
+        boundingBox: '#myId',
+        contentBox: '#myId > .aui-panel-content'
+      }
+    ).render();
+  }
+);
+```
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>

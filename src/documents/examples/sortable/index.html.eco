@@ -1,0 +1,20 @@
+---
+title: Basic Example
+layout: single-example
+slug: 'sortable'
+tags: 'sortable'
+category: Sortable
+description: Allows users to sort lists.
+index: true
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/sortable/css/basic.css" />
+
+<%- @readFile('basic-markup.html', 'html') %>
+
+<%- @codeFile('basic-markup.html', 'html') %>
+<%- @codeFile('basic.js', 'javascript') %>
+
+<script>
+  <%- @readFile('basic.js', 'javascript') %>
+</script>
