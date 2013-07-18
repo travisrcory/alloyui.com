@@ -1,0 +1,13 @@
+.aui-panel-hd {
+	background: #C0C2C5 url(../img/header_bg.png) repeat-x 0 0;
+	border-bottom-: 1px #AEB2B8 solid;
+	border-left: 0 #C8C9CA solid;
+	border-right: 0 #AEB2B8 solid;
+	border-top: 0 #C8C9CA solid;
+	padding-left: 10px;
+	text-shadow: 1px 1px #FFFFFF;
+}
+
+.panel {
+	width: 400px;
+}
