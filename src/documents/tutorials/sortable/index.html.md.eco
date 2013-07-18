@@ -1,0 +1,91 @@
+---
+layout: single-doc
+title: Sortable
+tags: 'sortable'
+category: Sortable
+description: Allows user to arrange and sort content on a page.
+---
+
+#### Getting Started
+
+First load the seed file, if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+```
+
+Then initialize AlloyUI and load the Sortable module.
+
+``` javascript
+AUI().use(
+	'aui-sortable',
+	function(A) {
+		// code goes here
+	}
+);
+```
+
+---
+
+#### Using Sortable
+
+Create a list of elements that contains the items you want to sort:
+
+``` html
+<ul class="vertical" id="vertical">
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+</ul>
+```
+
+Let's create a new instance of the Sortable component, then point to where the sortable-list will be with `nodes` and define a `constrain` for this sortable. Finally, let's render it!
+
+``` javascript
+AUI().use(
+	'aui-sortable',
+	function(A) {
+		new A.Sortable(
+		{
+			nodes: '#vertical li',
+			constrain: {
+				stickY: true
+			}
+		}
+	);
+	}
+);
+```
+
+---
+
+#### Configuring Sortable
+
+There are some other options that you can pass to your Sortable instance.
+
+For example, you can give the list handles by setting `dd` and the `handles` array to the html list element.
+
+``` javascript
+AUI().use(
+	'aui-sortable',
+	function(A) {
+		new A.Sortable(
+			{
+				dd: {
+					//insert the id or class of the html element that will take the handles
+					handles: [.handles]
+				},
+				nodes: '#verticalWithHandles li'
+			}
+		);
+	}
+);
+```
+
+Also, you can create a horizontal sortable list by changing the CSS of your list `display` to `inline-block`.
+
+<div class="alert alert-success">
+	For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>
