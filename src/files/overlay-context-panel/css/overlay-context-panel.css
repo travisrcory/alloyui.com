@@ -1,0 +1,8 @@
+#ContextPanel {
+	margin: 100px auto;
+	width: 200px;
+}
+
+#question1 .aui-contentpanel-content {
+	padding: 11px;
+}

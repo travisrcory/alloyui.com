@@ -1,0 +1,20 @@
+---
+title: Overlay Context Panel Example
+layout: single-example
+slug: 'overlay-context-panel'
+tags: 'overlay-context-panel'
+category: Overlay Context Panel
+description: Gives the user the ability to change the properties of a panel's display location.
+index: true
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/overlay-context-panel/css/overlay-context-panel.css" />
+
+<%- @readFile('overlay-context-panel-markup.html', 'html') %>
+
+<%- @codeFile('overlay-context-panel-markup.html', 'html') %>
+<%- @codeFile('overlay-context-panel.js', 'javascript') %>
+
+<script>
+  <%- @readFile('overlay-context-panel.js', 'javascript') %>
+</script>
